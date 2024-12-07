@@ -3,17 +3,10 @@ let sortByNameBtn = document.getElementById("btn-sort-by-name");
 let sortByValueBtn = document.getElementById("btn-sort-by-value");
 let deleteSelectedBtn = document.getElementById("btn-delete-selected");
 
+// масив даних, введених користувачем
 let dataArray = [];
-let testArray = [
-  { name: "John", value: "John123" },
-  { name: "city", value: "Kyiv" },
-  { name: "product", value: "Laptop" },
-  { name: "age", value: "30" },
-  { name: "country", value: "Ukraine" },
-];
 
-dataArray = testArray;
-
+// функція перевірки коректності даних та формування масиву
 function addNameValuePair(input) {
   // видаляємо зайві пробіли
   input = input.split("=").map((element) => element.trim());
@@ -28,9 +21,11 @@ function addNameValuePair(input) {
   } else {
     alert(`Перевірте коректність введення даних <name> = <value>`);
   }
+
   return dataArray;
 }
 
+//  функція для генерування списку на сторінку
 function renderList(objectArray) {
   // очищення списку елементів
   document.getElementById("pair-list").innerHTML = "";
@@ -38,12 +33,14 @@ function renderList(objectArray) {
   // додаємо список елементів з масиву об'єктів
   objectArray.forEach(({ name, value }, index) => {
     const listElement = document.createElement("li");
-    listElement.id = index + 1;
+    listElement.id = index;
+    listElement.classList.add("list-element");
     listElement.textContent = `${name} = ${value}`;
     document.getElementById("pair-list").appendChild(listElement);
   });
 }
 
+// обробник кнопки додати дані
 addButton.addEventListener("click", function () {
   let inputValue = document.getElementById("input-pair").value;
   addNameValuePair(inputValue);
@@ -68,4 +65,29 @@ sortByValueBtn.addEventListener("click", function () {
   });
 
   renderList(dataArray);
+});
+
+// виділення елементів
+const list = document.getElementById("pair-list");
+
+let delElement = [];
+
+list.addEventListener("click", (e) => {
+  const listItem = e.target.closest(".list-element");
+  delElement = [];
+  if (listItem) {
+    listItem.classList.toggle("select");
+    document.querySelectorAll(".select").forEach(({ id }) => {
+      delElement.push(parseInt(id));
+    });
+  }
+});
+
+deleteSelectedBtn.addEventListener("click", () => {
+  dataArray = dataArray.filter((value, index) => {
+    return !delElement.includes(index);
+  });
+
+  renderList(dataArray);
+  delElement = [];
 });
