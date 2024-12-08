@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <title>js-exam</title>
 
+    <link rel="icon" href="img/discover_12436434.svg" type="image/svg+xml" />
+    <link rel="icon" href="img/discover_12436434.svg" type="image/x-icon" />
+
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
 
@@ -11,19 +14,30 @@
   </head>
   <body>
     <div id="container">
-      <h1>Test</h1>
-      <p>Name/Value Pair</p>
+      <div class="body">
+        <h1 class="body__title">Організатор Даних</h1>
+        <p class="body__text">Пара Ім'я/Значення</p>
+        <div class="body__content-wrapper">
+          <label>
+            <input
+              class="body__input"
+              id="input-pair"
+              type="text"
+              placeholder="Name=Value"
+          /></label>
+          <button id="btn-add">Додати</button>
+        </div>
 
-      <label for="input-pair"></label>
-      <input id="input-pair" type="text" placeholder="Name=Value" />
-      <button id="btn-add">Додати</button>
-
-      <p>Name/Value Pair List</p>
-      <ul id="pair-list" class="list"></ul>
-
-      <button id="btn-sort-by-name">Sort by Name</button>
-      <button id="btn-sort-by-value">Sort by Value</button>
-      <button id="btn-delete-selected">Delete</button>
+        <p class="body__text">Список пар Ім'я/Значення</p>
+        <div class="body__content-wrapper">
+          <ul id="pair-list" class="body__list"></ul>
+          <div class="body__button">
+            <button id="btn-sort-by-name">Сортувати за ім'ям</button>
+            <button id="btn-sort-by-value">Сортувати за значенням</button>
+            <button id="btn-delete-selected">Видалити виділене</button>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

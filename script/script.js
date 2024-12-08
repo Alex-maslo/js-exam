@@ -14,8 +14,8 @@ function addNameValuePair(input) {
   // перевірка коректності введених даних
   if (
     input.length === 2 &&
-    input[0].match(/^[a-zA-Zа-яА-Я0-9]+$/) &&
-    input[1].match(/^[a-zA-Zа-яА-Я0-9]+$/)
+    input[0].match(/^[a-zA-Zа-яА-ЯёЁіІїЇєЄґҐъЪ0-9]+$/) &&
+    input[1].match(/^[a-zA-Zа-яА-ЯёЁіІїЇєЄґҐъЪ0-9]+$/)
   ) {
     dataArray.push({ name: input[0], value: input[1] });
   } else {
@@ -47,6 +47,7 @@ addButton.addEventListener("click", function () {
   renderList(dataArray);
 });
 
+// обробник кнопки сортувати за ім'ям
 sortByNameBtn.addEventListener("click", function () {
   dataArray.sort((a, b) => {
     if (a.name.toLocaleLowerCase() < b.name.toLocaleLowerCase()) return -1;
@@ -57,6 +58,7 @@ sortByNameBtn.addEventListener("click", function () {
   renderList(dataArray);
 });
 
+// обробник кнопки сортувати за значенням
 sortByValueBtn.addEventListener("click", function () {
   dataArray.sort((a, b) => {
     if (a.value.toLocaleLowerCase() < b.value.toLocaleLowerCase()) return -1;
@@ -70,8 +72,10 @@ sortByValueBtn.addEventListener("click", function () {
 // виділення елементів
 const list = document.getElementById("pair-list");
 
+// масив для виділених елементів
 let delElement = [];
 
+// обробник для виділених елементів, індекси яких додаються в масив
 list.addEventListener("click", (e) => {
   const listItem = e.target.closest(".list-element");
   delElement = [];
@@ -83,6 +87,7 @@ list.addEventListener("click", (e) => {
   }
 });
 
+// обробник кнопки видалити виділені елементи
 deleteSelectedBtn.addEventListener("click", () => {
   dataArray = dataArray.filter((value, index) => {
     return !delElement.includes(index);
