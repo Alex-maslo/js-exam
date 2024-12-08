@@ -6,6 +6,24 @@
   box-sizing: border-box;
 }
 
+button {
+  background-color: #ffd700;
+  color: orangered;
+  border: 2px solid #ffd700;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  scale: calc(1.05);
+  background-color: #ffb700;
+
+  box-shadow:
+    0 1px 2px 0 rgb(26 115 232 / 45%),
+    0 1px 3px 1px rgb(26 115 232 / 30%);
+}
+
 #container {
   display: flex;
   justify-content: center;
@@ -71,13 +89,4 @@
 
 .select {
   background-color: #ffd700;
-}
-
-button {
-  background-color: #ffd700;
-  color: darkred;
-  border: 2px solid #ffd700;
-  border-radius: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
 }
