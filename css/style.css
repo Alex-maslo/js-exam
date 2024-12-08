@@ -33,9 +33,10 @@ button:hover {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   padding: 30px 20% 30px 20%;
   background: #1c88e6;
+  overflow: auto;
 }
 
 .body__title {
@@ -56,8 +57,6 @@ button:hover {
 .second {
   flex-grow: 1;
   width: 100%;
-  /*background-color: white;*/
-  overflow: auto;
 }
 
 .body__text {
@@ -86,7 +85,6 @@ button:hover {
   list-style: none;
   height: 100%;
   overflow: auto;
-  flex-grow: 1;
 }
 
 .body__list > li {
