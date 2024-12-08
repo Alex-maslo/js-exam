@@ -2,22 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>js-exam</title>
 
+    <!-- Підключення favicon -->
     <link rel="icon" href="img/discover_12436434.svg" type="image/svg+xml" />
-    <link rel="icon" href="img/discover_12436434.svg" type="image/x-icon" />
 
+    <!-- Підключення стилів -->
     <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/style.css" />
 
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style-tablet.css" />
+    <link rel="stylesheet" href="css/style-mobile.css" />
+    <!-- Підключення script -->
     <script src="script/script.js" defer></script>
   </head>
+
   <body>
     <div id="container">
       <div class="body">
         <h1 class="body__title">Організатор Даних</h1>
         <p class="body__text">Пара Ім'я/Значення</p>
-        <div class="body__content-wrapper">
+        <div class="body__content-wrapper first">
           <label>
             <input
               class="body__input"
@@ -29,7 +39,7 @@
         </div>
 
         <p class="body__text">Список пар Ім'я/Значення</p>
-        <div class="body__content-wrapper">
+        <div class="body__content-wrapper second">
           <ul id="pair-list" class="body__list"></ul>
           <div class="body__button">
             <button id="btn-sort-by-name">Сортувати за ім'ям</button>
