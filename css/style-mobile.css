@@ -6,9 +6,9 @@
   button {
     border: 2px solid #ffd700;
     border-radius: 3px;
-    padding: 3px 3px;
+    padding: 3px 5px;
     cursor: pointer;
-    font-size: 10px;
+    font-size: 17px;
   }
 
   .body {
@@ -45,12 +45,13 @@
     background: white;
     height: 100%;
     padding: 10px 20px;
-    max-height: 250px;
+    max-height: 280px;
     overflow: auto;
   }
 
   .body__button {
     flex-direction: row;
+    justify-content: space-between;
     gap: 10px;
   }
 }
