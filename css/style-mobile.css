@@ -1,4 +1,4 @@
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 450px) {
   #container {
     padding: 0;
   }
@@ -8,7 +8,7 @@
     border-radius: 3px;
     padding: 3px 5px;
     cursor: pointer;
-    font-size: 17px;
+    font-size: 15px;
   }
 
   .body {
@@ -30,7 +30,7 @@
   .body__input {
     font-size: 15px;
     padding: 5px 5px;
-    color: red;
+    color: orangered;
   }
 
   .body__content-wrapper {
@@ -45,7 +45,7 @@
     background: white;
     height: 100%;
     padding: 10px 20px;
-    max-height: 280px;
+    max-height: 40vh;
     overflow: auto;
   }
 

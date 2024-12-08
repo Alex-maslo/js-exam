@@ -27,11 +27,11 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px;
 }
 
 .body {
   width: 60%;
+  height: 100vh;
   padding: 30px;
   border-radius: 10px;
   box-shadow: -1px -1px 18px -7px rgba(0, 0, 0, 0.55);
@@ -66,11 +66,6 @@ button:hover {
   color: orangered;
 }
 
-.body__list {
-  background: white;
-  padding: 10px 20px;
-}
-
 .body__button {
   display: flex;
   flex-direction: column;
@@ -78,7 +73,11 @@ button:hover {
 }
 
 .body__list {
+  background: white;
+  padding: 10px 20px;
   list-style: none;
+  max-height: 60vh;
+  overflow: auto;
 }
 
 .body__list > li {

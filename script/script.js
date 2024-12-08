@@ -2,6 +2,7 @@ let addButton = document.getElementById("btn-add");
 let sortByNameBtn = document.getElementById("btn-sort-by-name");
 let sortByValueBtn = document.getElementById("btn-sort-by-value");
 let deleteSelectedBtn = document.getElementById("btn-delete-selected");
+const list = document.getElementById("pair-list");
 
 // масив даних, введених користувачем
 let dataArray = [];
@@ -36,7 +37,7 @@ function renderList(objectArray) {
     listElement.id = index;
     listElement.classList.add("list-element");
     listElement.textContent = `${name} = ${value}`;
-    document.getElementById("pair-list").appendChild(listElement);
+    list.appendChild(listElement);
   });
 }
 
@@ -70,7 +71,6 @@ sortByValueBtn.addEventListener("click", function () {
 });
 
 // виділення елементів
-const list = document.getElementById("pair-list");
 
 // масив для виділених елементів
 let delElement = [];
